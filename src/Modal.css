@@ -1,0 +1,111 @@
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------- Modal Overlay ---------- */
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ---------- Modal Content ---------- */
+.ReactModal__Content {
+  position: relative;
+  width: 350px;
+  max-width: 90%;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #1e1b4b; /* solid background */
+  color: #e0e7ff;
+  animation: slideUp 0.3s ease;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Modal Header ---------- */
+.modal-header {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Modal Message ---------- */
+.modal-message, 
+.modal-content p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #e0e7ff;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.modal-message:hover,
+.modal-content p:hover {
+  color: #a5b4fc;
+  transform: translateX(4px);
+}
+
+/* ---------- Modal Actions ---------- */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  padding: 10px 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Primary / Confirm Button */
+.btn-primary,
+.btn-confirm {
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary:hover,
+.btn-confirm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.7);
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background: linear-gradient(90deg, #312e81, #4338ca);
+  color: #e0e7ff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.btn-cancel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.6);
+}
