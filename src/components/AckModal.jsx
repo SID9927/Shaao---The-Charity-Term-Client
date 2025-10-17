@@ -42,6 +42,7 @@ export default function AckModal({ isOpen, onBack, onConfirm, ackId, formData })
         <p><strong>Mobile:</strong> {formData?.mobile}</p>
         <p><strong>DOB:</strong> {formData?.dob}</p>
         <p><strong>Address:</strong> {formData?.address}</p>
+        <p><strong>Referral Code:</strong> {formData?.referralCode}</p>
         <p><strong>Amount:</strong> ₹{formData?.amount}</p>
         <p><strong>Transaction ID:</strong> {formData?.transactionId}</p>
       </div>

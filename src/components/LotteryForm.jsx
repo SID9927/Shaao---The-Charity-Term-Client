@@ -43,6 +43,7 @@ export default function LotteryForm() {
     mobile: "",
     email: "",
     address: "",
+    referralCode: "", 
     amount: 10,
     transactionId: "",
   });
@@ -91,6 +92,7 @@ export default function LotteryForm() {
       mobile: "",
       email: "",
       address: "",
+      referralCode: "", 
       amount: 10,
       transactionId: "",
     });
