@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaCheckCircle, FaTimesCircle, FaSearch, FaSync } from "react-icons/fa";
+import { fetchEntriesApi } from "../api"; 
 
 export default function AdminEntries() {
   const [entries, setEntries] = useState([]);
@@ -11,13 +12,12 @@ export default function AdminEntries() {
     fetchEntries();
   }, []);
 
-  // ✅ Fetch entries from backend
+  // ✅ Fetch entries (now using API from api.js)
   async function fetchEntries() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/admin/entries");
-      const data = await res.json();
+      const data = await fetchEntriesApi();
       if (data.success) {
         setEntries(data.data);
       } else {

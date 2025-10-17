@@ -30,3 +30,15 @@ export async function sendEmail({ toMail, subject, messageBody }) {
 
   return await res.json();
 }
+
+
+export async function fetchEntriesApi() {
+  try {
+    const res = await fetch(`${BASE}/admin/entries`);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error("Error fetching entries:", err);
+    throw err;
+  }
+}
