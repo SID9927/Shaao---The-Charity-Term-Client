@@ -18,7 +18,7 @@ export async function createEntry(payload) {
 }
 
 export async function sendEmail({ toMail, subject, messageBody }) {
-  const res = await fetch("http://localhost:5000/api/send-email", {
+  const res = await fetch(`${BASE}/send-email`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ toMail, subject, messageBody }),
