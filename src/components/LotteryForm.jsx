@@ -447,6 +447,7 @@ Team ShaShaao 🌸
           onConfirm={onConfirm}
           ackId={ackPreview}
           formData={{ ...form, age }}
+          loading={submitting} 
         />
 
         <ResultModal

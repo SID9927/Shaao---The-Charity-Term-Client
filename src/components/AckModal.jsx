@@ -4,7 +4,14 @@ import "../Modal.css";
 
 Modal.setAppElement("#root");
 
-export default function AckModal({ isOpen, onBack, onConfirm, ackId, formData }) {
+export default function AckModal({
+  isOpen,
+  onBack,
+  onConfirm,
+  ackId,
+  formData,
+  loading, // ✅ new prop
+}) {
   return (
     <Modal
       isOpen={isOpen}
@@ -48,8 +55,23 @@ export default function AckModal({ isOpen, onBack, onConfirm, ackId, formData })
       </div>
 
       <div className="modal-actions">
-        <button className="btn btn-cancel" onClick={onBack}>Back</button>
-        <button className="btn btn-confirm" onClick={onConfirm}>Confirm & Submit</button>
+        {loading ? (
+          <div className="loading-container">
+            <div className="spinner-border text-light" role="status">
+              <span className="visually-hidden">Processing...</span>
+            </div>
+            <p style={{ marginTop: "10px", color: "#fff" }}>Submitting...</p>
+          </div>
+        ) : (
+          <>
+            <button className="btn btn-cancel" onClick={onBack}>
+              Back
+            </button>
+            <button className="btn btn-confirm" onClick={onConfirm}>
+              Confirm & Submit
+            </button>
+          </>
+        )}
       </div>
     </Modal>
   );
