@@ -177,6 +177,9 @@ code {
   color: red;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 .loading-container {
   display: flex;
