@@ -4,6 +4,7 @@ import AckModal from "./AckModal";
 import { getNextAck, createEntry, sendEmail } from "../api";
 import ResultModal from "./ResultModal";
 import { FaRegCopy } from "react-icons/fa"; // copy icon
+import logoName from "../assets/logoName.png";
 
 // helper: calculate age
 function calcAge(dobStr) {
@@ -123,7 +124,7 @@ export default function LotteryForm() {
       newErrors.dob = "Date of birth is required";
     } else {
       const userAge = calcAge(form.dob);
-      if (userAge < 18) newErrors.dob = "You must be at least 18 years old";
+      if (userAge < 16) newErrors.dob = "You must be at least 16 years old";
     }
 
     if (!form.address.trim()) newErrors.address = "Address is required";
@@ -209,8 +210,19 @@ Team ShaShaao 🌸
   return (
     <div className="card form-card shadow-sm">
       <div className="card-body">
-        <h5 className="card-title mb-3 text-center">Lottery Registration</h5>
-
+      <div className="text-center mb-3">
+      <a href="/">
+        <img
+          src={logoName}
+          alt="Shaao Logo"
+          style={{
+            width: "80px",
+            height: "auto",
+            marginBottom: "10px",
+          }}
+        />
+      </a>
+    </div>
         {successAck && (
           <div className="alert alert-success">
             <strong>Registered!</strong> Your acknowledgement ID is {successAck}
