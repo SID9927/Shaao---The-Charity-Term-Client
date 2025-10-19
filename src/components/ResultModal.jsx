@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 Modal.setAppElement("#root");
 
 export default function ResultModal({ isOpen, onClose, success, message }) {
-  const telegramLink = import.meta.env.VITE_TELEGRAM_LINK; 
+  // const telegramLink = import.meta.env.VITE_TELEGRAM_LINK; 
   const instagramLink = import.meta.env.VITE_INSTAGRAM_LINK;
 
   return (
@@ -27,7 +27,7 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
       <p className="modal-message">{message}</p>
 
       {/* ✅ Extra message below only if success */}
-      {success && telegramLink && (
+      {success && instagramLink && (
         <div
           className="mt-3 d-flex align-items-center justify-content-center gap-2"
           style={{ fontSize: "0.9rem" }}
