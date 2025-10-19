@@ -163,30 +163,30 @@ export default function LotteryForm() {
       const res = await createEntry(payload);   // registration success response
 
       // Prepare email details
-    const emailDetails = {
-      toMail: form.email,
-      subject: "Registration Successful | ShaShaao - The Charity Term",
-      messageBody: `
-Dear ${form.fullName},
+//     const emailDetails = {
+//       toMail: form.email,
+//       subject: "Registration Successful | ShaShaao - The Charity Term",
+//       messageBody: `
+// Dear ${form.fullName},
 
-Thank you for registering with ShaShaao - The Charity Term!
+// Thank you for registering with ShaShaao - The Charity Term!
 
-Your registration was successful, and your unique acknowledgement ID is **${res.ackId}**.
+// Your registration was successful, and your unique acknowledgement ID is **${res.ackId}**.
 
-We appreciate your kind participation and generosity towards our charitable cause. Together, we can make a meaningful difference.
+// We appreciate your kind participation and generosity towards our charitable cause. Together, we can make a meaningful difference.
 
-Warm regards,  
-Team ShaShaao 🌸
-`,
-    };
+// Warm regards,  
+// Team ShaShaao 🌸
+// `,
+//     };
 
     // Send email
-    try {
-      await sendEmail(emailDetails);
-      console.log("✅ Confirmation email sent successfully!");
-    } catch (err) {
-      console.error("❌ Failed to send email:", err);
-    }
+    // try {
+    //   await sendEmail(emailDetails);
+    //   console.log("✅ Confirmation email sent successfully!");
+    // } catch (err) {
+    //   console.error("❌ Failed to send email:", err);
+    // }
 
     // Show result modal
       setShowModal(false); // close AckModal
