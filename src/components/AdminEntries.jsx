@@ -102,7 +102,7 @@ export default function AdminEntries() {
                     <td>{entry.email}</td>
                     <td>{entry.mobile}</td>
                     <td>{entry.address}</td>
-                    <td>{entry.ReferralCode}</td>
+                    <td>{entry.referralCode}</td>
                     <td>₹{entry.amount}</td>
                     <td>{entry.transactionId}</td>
                     <td>
