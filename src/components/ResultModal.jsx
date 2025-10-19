@@ -1,14 +1,14 @@
 import React from "react";
 import Modal from "react-modal";
 import "../Modal.css";
-import { FaTelegramPlane } from "react-icons/fa"; // ✅ added
-import { FaInstagramPlane } from "react-icons/fa"; // ✅ added
+import { FaTelegramPlane } from "react-icons/fa"; 
+import { FaInstagram } from "react-icons/fa"; 
 
 Modal.setAppElement("#root");
 
 export default function ResultModal({ isOpen, onClose, success, message }) {
-  const telegramLink = import.meta.env.VITE_TELEGRAM_LINK; // ✅ fetch from .env
-  const instagramLink = import.meta.env.VITE_INSTAGRAM_LINK; // ✅ fetch from .env
+  const telegramLink = import.meta.env.VITE_TELEGRAM_LINK; 
+  const instagramLink = import.meta.env.VITE_INSTAGRAM_LINK;
 
   return (
     <Modal
@@ -54,7 +54,7 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              color: "#229ED9",
+              color: "#E1306C", // Instagram pink
               textDecoration: "none",
               display: "flex",
               alignItems: "center",
@@ -62,8 +62,8 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
               fontWeight: 500,
             }}
           >
-            <FaInstagramPlane size={18} />
-            Telegram
+            <FaInstagram size={18} />
+            Instagram
           </a>
         </div>
       )}
