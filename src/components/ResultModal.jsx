@@ -2,11 +2,13 @@ import React from "react";
 import Modal from "react-modal";
 import "../Modal.css";
 import { FaTelegramPlane } from "react-icons/fa"; // ✅ added
+import { FaInstagramPlane } from "react-icons/fa"; // ✅ added
 
 Modal.setAppElement("#root");
 
 export default function ResultModal({ isOpen, onClose, success, message }) {
   const telegramLink = import.meta.env.VITE_TELEGRAM_LINK; // ✅ fetch from .env
+  const instagramLink = import.meta.env.VITE_INSTAGRAM_LINK; // ✅ fetch from .env
 
   return (
     <Modal
@@ -31,7 +33,7 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
           style={{ fontSize: "0.9rem" }}
         >
           <span>Join us on</span>
-          <a
+          {/* <a
             href={telegramLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -45,6 +47,22 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
             }}
           >
             <FaTelegramPlane size={18} />
+            Telegram
+          </a> */}
+          <a
+            href={instagramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#229ED9",
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              fontWeight: 500,
+            }}
+          >
+            <FaInstagramPlane size={18} />
             Telegram
           </a>
         </div>
