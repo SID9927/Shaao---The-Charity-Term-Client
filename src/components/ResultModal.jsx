@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import "../Modal.css";
-import { FaTelegramPlane } from "react-icons/fa"; 
 import { FaInstagram } from "react-icons/fa"; 
 
 Modal.setAppElement("#root");
@@ -27,13 +26,13 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
       <p className="modal-message">{message}</p>
 
       {/* ✅ Extra message below only if success */}
-      {success && instagramLink && (
+     {/* {success && instagramLink && (
         <div
           className="mt-3 d-flex align-items-center justify-content-center gap-2"
           style={{ fontSize: "0.9rem" }}
         >
           <span>Join us on</span>
-          {/* <a
+          <a
             href={telegramLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -48,7 +47,7 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
           >
             <FaTelegramPlane size={18} />
             Telegram
-          </a> */}
+          </a> 
           <a
             href={instagramLink}
             target="_blank"
@@ -67,6 +66,7 @@ export default function ResultModal({ isOpen, onClose, success, message }) {
           </a>
         </div>
       )}
+        */}
 
       <button className="btn btn-primary mt-4" onClick={onClose}>
         OK
